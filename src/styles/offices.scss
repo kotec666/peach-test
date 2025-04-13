@@ -1,0 +1,131 @@
+.offices {
+  position: relative;
+  width: 100%;
+}
+
+.offices__filters-control {
+  padding: 13px 5px 0 5px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 19px;
+  justify-content: space-between;
+  box-shadow: 0 0 40px 0 #0000000F;
+}
+
+.offices__toggle {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+  cursor: pointer;
+}
+
+.offices__title {
+  font-weight: 600;
+  font-size: clamp(17px, 3.5vw, 21px);
+  line-height: 100%;
+  letter-spacing: 0;
+  color: var(--black-color);
+}
+
+.offices__toggle-icon {
+  display: flex;
+  align-items: center;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  overflow-y: hidden;
+  padding-bottom: 27px;
+}
+
+.filter__item {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  position: relative;
+  color: var(--black-color);
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  text-wrap: nowrap;
+}
+
+.filter__item--active {
+  color: var(--red-color);
+}
+
+.filter__item--active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -27px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--red-color);
+}
+
+.offices__regions {
+  width: 100%;
+  background-color: white;
+  column-gap: 0;
+  row-gap: 15px;
+  padding: 0 5px 15px 5px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  box-shadow: 0 32px 32px 0 #0000000F;
+}
+
+.offices__region {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0;
+
+  color: var(--black-color);
+}
+
+.offices__region-title {
+  display: flex;
+  align-items: center;
+  column-gap: 3px;
+  font-weight: 600;
+  font-size: clamp(14px, 3.5vw, 18px);
+
+  line-height: 20px;
+  letter-spacing: 0;
+  color: var(--black-color);
+}
+
+.offices__cities {
+  flex-direction: column;
+  row-gap: 12px;
+
+  font-weight: 400;
+  font-size: clamp(14px, 3.5vw, 18px);
+  line-height: 17px;
+  letter-spacing: 0;
+  color: var(--black-color);
+}
+
+.offices__city {
+  cursor: pointer;
+  color: var(--black-color)
+}
+
+.offices__map {
+  max-width: 1500px;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.offices__svg {
+  height: 435px;
+  width: 900px;
+}

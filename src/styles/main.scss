@@ -1,0 +1,341 @@
+@use 'reset';
+@use 'fonts';
+@use 'variables';
+@use 'header';
+@use 'about';
+@use 'advantages';
+@use 'offices';
+@use 'mission';
+@use 'directions';
+@use 'benefits';
+
+*, body {
+  box-sizing: border-box;
+  font-family: 'Proxima Nova', sans-serif;
+}
+
+.custom-scrollbar--transparent {
+  & {
+    scrollbar-width: auto;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border: transparent;
+  }
+}
+
+img {
+  user-select: none;
+}
+
+.container {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: flex;
+  padding: 0 15px;
+}
+
+.container--slider {
+  display: flex;
+  margin-top: 44px;
+  margin-bottom: 48px;
+  max-width: 1110px;
+  flex-direction: column;
+  row-gap: 22px;
+}
+
+.slider__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider__title {
+  font-weight: 600;
+  font-size: clamp(24px, 3.5vw, 52px);
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+.slider__controls {
+  display: none;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.slider__control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.05);
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.slider__control--prev {
+
+}
+
+.slider__control--next {
+  rotate: 180deg;
+}
+
+
+.slider__wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.slider__wrapper-item {
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.splide__slide {
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.slider__progress {
+  display: none;
+  align-items: center;
+  column-gap: 10px;
+  width: 100%;
+
+  li {
+    padding-top: 20px;
+    width: 100%;
+  }
+}
+
+.slider__progress-item {
+  width: 100%;
+  border: none;
+  height: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  &.is-active {
+    opacity: 1;
+    transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    background-color: var(--red-color);
+  }
+}
+
+
+@media screen and (min-width: 1280px) {
+  .offices__regions {
+    grid-auto-flow: column;
+    column-gap: 24px;
+  }
+
+  .directions__grid-mobile {
+    display: none;
+  }
+
+  .directions {
+    padding: 0;
+  }
+
+  .benefits {
+    margin: 100px 0 0 0;
+  }
+
+  .directions__item {
+    row-gap: 56px;
+  }
+
+  .directions__grid {
+    display: flex;
+  }
+
+  .nav__list {
+    column-gap: 10px;
+    justify-content: space-between;
+  }
+  .container--header {
+    padding: 28px 70px;
+  }
+  .container {
+    padding: 0;
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+
+  .offices__regions {
+    position: absolute;
+    z-index: 10;
+    top: 120px;
+    left: 0;
+    box-shadow: 0 0 32px 0 #0000000F;
+  }
+
+  .offices__cities {
+    row-gap: 15px;
+  }
+
+  .offices__region {
+    row-gap: 13px;
+  }
+
+  .offices__region-title {
+
+    img {
+      display: none;
+    }
+  }
+
+  .offices__regions {
+    padding: 30px 68px;
+  }
+
+  .container--slider {
+    margin-top: 110px;
+    row-gap: 50px;
+  }
+
+  .slider__controls, .slider__progress {
+    display: flex;
+  }
+
+  .benefits__notice {
+    margin-bottom: 55px;
+  }
+
+  .benefits__separator {
+    margin: 75px 0 70px 0;
+  }
+
+  .benefits__heading {
+    margin-bottom: 55px;
+  }
+
+  .benefits__title {
+    .first--br {
+      display: block;
+    }
+
+    .second--br {
+      display: none;
+    }
+  }
+
+  .benefits__card {
+    width: 178px;
+    max-width: 178px;
+  }
+
+  .benefits__group {
+    column-gap: 16px;
+    row-gap: 16px;
+  }
+
+  .benefits__image {
+    width: 110px;
+    height: 110px;
+
+    .benefits__icon {
+      width: 48px;
+      height: 48px;
+    }
+
+    .benefits__image--lti {
+      width: 66px;
+      height: 48px;
+    }
+  }
+
+  .benefits__wrapper {
+    padding: 80px 80px;
+  }
+
+  .offices__map {
+    padding: 0 30px;
+    margin-top: 92px;
+  }
+
+  .offices__svg {
+    height: 604px;
+    width: 1190px;
+  }
+
+  .offices__toggle {
+    column-gap: 10px;
+  }
+
+  .offices__filters-control {
+    padding: 26px 70px;
+  }
+
+  .about {
+    padding: 82px 5px;
+    align-items: center;
+    row-gap: 34px;
+    margin: 0 auto;
+  }
+
+  .about__content {
+    text-align: center;
+  }
+
+  .filter {
+    overflow-y: visible;
+    padding-bottom: 0;
+    column-gap: 27px;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .container--advantages {
+    display: none;
+  }
+  .filter__item {
+    font-size: 16px;
+  }
+
+  .directions {
+    margin-top: 100px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .mission {
+    margin-top: 84px;
+    padding: 142px 0;
+    max-height: 470px;
+    background-size: auto, auto;
+  }
+
+  .mission__content {
+    row-gap: 45px;
+    padding: 0;
+
+    &.mission__content br {
+      display: block;
+    }
+  }
+}

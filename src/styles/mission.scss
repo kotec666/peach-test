@@ -1,0 +1,56 @@
+.container--mission {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.container--mission.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mission {
+  width: 100%;
+  padding: 35px 0;
+  background-color: var(--red-color-light);
+  max-height: 188px;
+
+  display: flex;
+  justify-content: center;
+
+  background-image: url('/images/mission-left.webp'), url('/images/mission-right.webp');
+  background-repeat: no-repeat;
+  background-position: left center, right center;
+  background-size: 40%, 40%;
+}
+
+.mission__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 11px;
+  padding: 0 10px;
+  color: white;
+
+  &.mission__content br {
+    display: none;
+  }
+}
+
+.mission__title {
+  font-weight: 600;
+  font-size: clamp(23px, 3.5vw, 47px);
+
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.mission__text {
+  font-weight: 400;
+  font-size: clamp(13px, 3.5vw, 27px);
+  line-height: 175%;
+  letter-spacing: 0;
+  text-align: center;
+  word-break: break-word;
+}
